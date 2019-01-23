@@ -18,7 +18,7 @@ function plugin_init() {
     function postMapper($p) {
       $p_url = get_the_post_thumbnail_url($p);
 
-      $precedingImg = $p_url != false ? "" : "<img src=\"" . $p_url . "\">";
+      $precedingImg = $p_url == false ? "" : "<img src=\"" . $p_url . "\">";
 
       return $precedingImg . "<div style=\"padding:7pt;margin-bottom:15pt;background:#eee;\">
       <h1><a href=\"" . get_permalink($p->ID) . "\">" . $p->post_title . "</a></h1>
